@@ -40,7 +40,7 @@ function HeroSection() {
 </h1>
 
 <h2 className="hero-subtitle mt-4 text-center lg:text-left">
-  Hemanth's Portfolio
+  Hemanth&apos;s Portfolio
 </h2>
 
 
