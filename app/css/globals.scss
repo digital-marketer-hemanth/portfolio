@@ -26,31 +26,49 @@ body {
   -webkit-font-smoothing: antialiased;
 } 
 
+/* ================= NAV LINK ================= */
+
 /* ================= NAVBAR ================= */
 
 .nav-link {
   position: relative;
-  padding: 6px 10px;
-  transition: color .3s ease;
+  display: inline-block;
+  padding: 4px 0;
+  transition: color 0.3s ease;
 }
 
+/* Hover text color */
 .nav-link:hover {
   color: #ec4899;
 }
 
+/* Animated underline */
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg,#ec4899,#8b5cf6);
-  transition: width .3s ease;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 10px;
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Navbar glow effect */
+.navbar-glow {
+  transition: all 0.3s ease;
+}
+
+.navbar-glow:hover {
+  box-shadow:
+    0 0 15px rgba(236, 72, 153, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.3);
 }
 
 /* ================= HERO ================= */
