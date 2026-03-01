@@ -1,6 +1,5 @@
-import { GoogleTagManager } from "@next/third-parties/google";
-import "@/utils/emailjs-init";
 import { Poppins } from "next/font/google";
+import "@/utils/emailjs-init";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
@@ -8,6 +7,7 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 import ScrollToTop from "./components/helper/scroll-to-top";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,42 +21,28 @@ export const metadata = {
   ),
 
   title: {
-    default: "Hemanth J – Digital Marketing Executive",
-    template: "%s | Hemanth J Portfolio",
+    default: "Hemanth J | Digital Marketer in Madurai | SEO & SMM Expert",
+    template: "%s | Hemanth J Digital Marketer Portfolio",
   },
 
   description:
-    "Portfolio of Hemanth – Digital Marketing Executive, SEO Specialist, Paid Ads Expert & AI-Assisted Content Strategist based in Madurai.",
+    "Digital Marketer in Madurai specializing in SEO, SMM, AI-assisted content writing, and Meta Ads. Helping businesses increase traffic, leads, and revenue.",
 
   keywords: [
     "Hemanth Digital Marketer",
     "SEO Specialist Madurai",
     "Digital Marketing Executive",
     "Paid Ads Expert",
-    "SEO Portfolio",
     "Meta Ads Specialist",
+    "SEO Portfolio",
   ],
 
   authors: [{ name: "Hemanth J" }],
   creator: "Hemanth J",
-  publisher: "Hemanth J",
 
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-    bingBot: {
-      index: true,
-      follow: true,
-    },
   },
 
   alternates: {
@@ -65,14 +51,14 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Hemanth J – Digital Marketing Executive",
+    title: "Hemanth J | Digital Marketer in Madurai | SEO & SMM Expert",
     description:
-      "SEO Specialist, Paid Ads Expert & AI-Assisted Content Strategist based in Madurai.",
+      "Digital Marketer in Madurai specializing in SEO, SMM, AI-assisted content writing, and Meta Ads. Helping businesses increase traffic, leads, and revenue.",
     url: "https://hemanth-j-digital-marketer-portfolio.netlify.app",
     siteName: "Hemanth J Portfolio",
     images: [
       {
-        url: "/hemanth-digital-marketer-og-image.avif", // change to jpg if needed
+        url: "/hemanth-digital-marketer-og-image.avif",
         width: 1200,
         height: 630,
         alt: "Hemanth J Digital Marketer Portfolio",
@@ -84,19 +70,11 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Hemanth J – Digital Marketing Executive",
+    title: "Hemanth J | Digital Marketer in Madurai | SEO & SMM Expert",
     description:
-      "SEO Specialist, Paid Ads Expert & AI-Assisted Content Strategist.",
+      "Digital Marketer in Madurai specializing in SEO, SMM, AI-assisted content writing, and Meta Ads. Helping businesses increase traffic, leads, and revenue.",
     images: ["/hemanth-digital-marketer-og-image.avif"],
   },
-
-  icons: {
-    icon: "/hemanth-digital-marketer-favicon.ico",
-    shortcut: "/hemanth-digital-marketer-favicon.ico",
-    apple: "/hemanth-digital-marketer-favicon.ico",
-  },
-
-  themeColor: "#0d1224",
 };
 
 export const viewport = {
@@ -108,14 +86,42 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ToastContainer />
-        <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-          <Navbar />
-          {children}
+
+        {/* 🔥 Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W5S7TZ3Q');
+          `}
+        </Script>
+
+        {/*GTM NoScript (Body Top) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W5S7TZ3Q"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        <Navbar />
+
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollToTop />
+          {children}
         </main>
+
         <Footer />
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+        <ToastContainer position="top-right" autoClose={3000} />
+
       </body>
     </html>
   );

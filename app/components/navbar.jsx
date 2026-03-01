@@ -35,7 +35,7 @@ function Navbar() {
 
           <li>
             <Link className="nav-link block py-1" href="/#skills">
-              SKILLS
+              TOOLS
             </Link>
           </li>
 

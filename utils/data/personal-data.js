@@ -4,7 +4,7 @@ export const personalData = {
   profile: "/profile.jpg",
   designation: "Digital Marketing Executive",
   description:
-    "Hi, I'm Hemanth — a passionate Digital Marketing Executive skilled in SEO, content strategy, social media campaigns, and online brand growth. I focus on creating effective digital strategies that connect businesses with the right audience and drive measurable results.",
+    "I am Hemanth J, a Digital Marketer with 1.4 years of experience specializing in SEO, AI-assisted content writing, and social media marketing. I focus on creating data-driven strategies that improve organic growth, increase brand visibility, and generate measurable results. I work both independently and collaboratively to deliver impactful marketing solutions.",
 
   // Contact details
   email: "hemanthsivan45@gmail.com",
@@ -25,5 +25,5 @@ export const personalData = {
 
   // Resume link
   resume:
-    "https://drive.google.com/file/d/your_resume_id/view?usp=sharing",
+    "https://drive.google.com/drive/folders/1g2UyhJ98DMCQcOTcDv4n-mHaCB-VHvR2",
 };

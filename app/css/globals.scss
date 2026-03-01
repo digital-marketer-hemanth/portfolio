@@ -18,15 +18,24 @@
   );
 }
 
+/* PREVENT HORIZONTAL SCROLL */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--bg-dark);
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-} 
+}
 
-/* ================= NAV LINK ================= */
+/* GLOBAL SECTION SPACING */
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
 /* ================= NAVBAR ================= */
 
@@ -37,12 +46,10 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Hover text color */
 .nav-link:hover {
   color: #ec4899;
 }
 
-/* Animated underline */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -60,11 +67,6 @@ body {
   width: 100%;
 }
 
-/* Navbar glow effect */
-.navbar-glow {
-  transition: all 0.3s ease;
-}
-
 .navbar-glow:hover {
   box-shadow:
     0 0 15px rgba(236, 72, 153, 0.4),
@@ -77,14 +79,12 @@ body {
   font-weight: 900;
   line-height: 1.05;
   font-size: clamp(2rem, 3vw, 2.8rem);
-  color: #ffffff;
 }
 
 .hero-subtitle {
   font-size: clamp(1rem, 1.2vw, 1.3rem);
   font-weight: 600;
   text-transform: uppercase;
-  color: #ffffff;
   position: relative;
   padding-left: 10px;
 }
@@ -126,7 +126,7 @@ body {
   transform: scale(1.05);
 }
 
-/* ================= LIGHT NEON CARD ================= */
+/* ================= NEON CARD ================= */
 
 .neon-card {
   position: relative;
@@ -156,27 +156,7 @@ body {
           mask-composite: exclude;
 }
 
-/* ================= SOCIAL BUTTON ================= */
-
-.social-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #10172d;
-  border: 1px solid #2b2f4d;
-  color: #ffffff;
-  transition: all .3s ease;
-}
-
-.social-btn:hover {
-  background: #ec4899;
-  transform: translateY(-3px);
-}
-
-/* ================= CONTACT ================= */
+/* ================= CONTACT INPUT ================= */
 
 .contact-input {
   width: 100%;
@@ -187,15 +167,21 @@ body {
   color: white;
 }
 
-/* ================= SKILLS AUTO SCROLL ================= */
+/* ================= ANIMATION ================= */
 
-/* Smooth Right → Left infinite movement */
+@keyframes borderFlow {
+  0% { background-position:0% 0%; }
+  50% { background-position:100% 100%; }
+  100% { background-position:0% 0%; }
+}
+
+/* ================= SKILLS AUTO SCROLL ================= */
 
 .animate-scroll {
   display: flex;
   gap: 2rem;
-  animation: scrollLeft 25s linear infinite; /* faster than 35s */
-  will-change: transform;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
 }
 
 .animate-scroll:hover {
@@ -203,27 +189,10 @@ body {
 }
 
 @keyframes scrollLeft {
-  0% {
-    transform: translateX(0%);
+  from {
+    transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
-}
-/* ================= HIDE SCROLLBAR ================= */
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes borderFlow {
-  0% { background-position:0% 0%; }
-  50% { background-position:100% 100%; }
-  100% { background-position:0% 0%; }
 }

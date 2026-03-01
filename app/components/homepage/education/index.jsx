@@ -7,68 +7,76 @@ import lottieFile from "/public/lottie/study.json";
 
 function Education() {
   return (
-    <div
+    <section
       id="education"
-      className="relative z-30 border-t my-12 lg:my-24 border-[#25213b]"
+      className="relative my-20 border-t border-[#25213b]"
     >
+      {/* Background Decoration */}
       <Image
         src="/section.svg"
         alt=""
         width={1572}
         height={795}
-        className="absolute top-0 -z-10 opacity-40"
+        className="absolute top-0 left-0 w-full -z-10 opacity-30"
       />
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]" />
-          <span className="bg-[#1a1443] text-white px-5 py-2 text-xl rounded-md font-semibold">
+      {/* Section Title */}
+      <div className="flex justify-center py-10">
+        <div className="flex items-center gap-4">
+          <span className="w-20 h-[2px] bg-[#1a1443]" />
+          <span className="bg-[#1a1443] text-white px-6 py-2 text-xl rounded-md font-semibold">
             Education
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]" />
+          <span className="w-20 h-[2px] bg-[#1a1443]" />
         </div>
       </div>
 
-      <div className="py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Main Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+        {/* Lottie Animation */}
         <div className="flex justify-center">
-          <div className="w-3/4">
+          <div className="w-3/4 max-w-md">
             <AnimationLottie animationPath={lottieFile} />
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
+        {/* Education Cards */}
+        <div className="flex flex-col gap-8">
           {educations.map((education) => (
-            <div key={education.id} className="neon-card p-6 text-white">
-
+            <div
+              key={education.id}
+              className="neon-card p-6 text-white"
+            >
+              {/* Duration */}
               <div className="text-center mb-4">
-                <p className="text-sm text-[#16f2b3] font-medium">
+                <p className="text-sm text-[#16f2b3] font-medium tracking-wide">
                   {education.duration}
                 </p>
               </div>
 
-              <div className="flex items-center gap-6">
+              {/* Content */}
+              <div className="flex items-start gap-6">
                 <BsPersonWorkspace
-                  size={32}
-                  className="text-violet-400"
+                  size={30}
+                  className="text-violet-400 mt-1"
                 />
 
                 <div>
                   <p className="text-lg font-semibold uppercase">
                     {education.title}
                   </p>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 mt-1">
                     {education.institution}
                   </p>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }
 

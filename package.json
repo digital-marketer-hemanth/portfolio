@@ -1,8 +1,9 @@
 {
-  "name": "developer-portfolio",
-  "description": "Portfolio of Abu Said",
-  "version": "0.1.0",
+  "name": "hemanth-digital-marketer-portfolio",
+  "description": "Portfolio of Hemanth J - Digital Marketing Executive, SEO Specialist & Paid Ads Expert.",
+  "version": "1.0.0",
   "private": true,
+  "author": "Hemanth J",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,23 +12,23 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.1",
-    "@next/third-parties": "^14.1.3",
+    "@next/third-parties": "14.2.35",
     "axios": "^1.6.8",
     "lottie-react": "^2.4.0",
-    "next": "^14.1.3",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "14.2.35",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.2",
     "react-google-recaptcha": "^3.1.0",
     "react-icons": "^4.11.0",
     "react-toastify": "^10.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "latest",
+    "autoprefixer": "10.4.19",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.35",
+    "postcss": "8.4.38",
     "sass": "^1.69.5",
-    "tailwindcss": "latest"
+    "tailwindcss": "3.4.4"
   }
 }
